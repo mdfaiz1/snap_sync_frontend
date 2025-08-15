@@ -19,9 +19,11 @@ import { useThemeStore } from "./store/useThemeStore.js";
 const App = () => {
   const { isLoading, authUser } = useAuthUser();
   const { theme } = useThemeStore();
+  // console.log("Auth user details", authUser);
 
-  const isAuthenticated = Boolean(authUser);
-  const isOnboarded = authUser?.isOnboarded;
+  // const isAuthenticated = Boolean(authUser);
+  const isAuthenticated = authUser !== null ? authUser?.success : false;
+  const isOnboarded = authUser?.user?.isOnboarded;
 
   if (isLoading) return <PageLoader />;
 

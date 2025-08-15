@@ -12,14 +12,14 @@ export const login = async loginData => {
 };
 export const logout = async () => {
   const response = await axiosInstance.post("/auth/logout");
-  console.log(response);
+  // console.log(response);
   return response.data;
 };
 
 export const getAuthUser = async () => {
   try {
     const res = await axiosInstance.get("/auth/me");
-    console.log(res);
+    // console.log(res.data);
     return res.data;
   } catch (error) {
     console.log("Error in getAuthUser:", error);
