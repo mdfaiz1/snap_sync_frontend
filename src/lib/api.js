@@ -13,6 +13,7 @@ export const login = async loginData => {
 export const logout = async () => {
   const response = await axiosInstance.post("/auth/logout");
   // console.log(response);
+  window.location.reload();
   return response.data;
 };
 
